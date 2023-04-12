@@ -1,0 +1,21 @@
+<div class="w-[500px] flex flex-col justify-center items-stretch gap-6">
+  <span
+    class="text-center text-3xl font-medium text-sky-700"
+    [textContent]="counter"
+  ></span>
+  <!-- <span> {{ counter }}</span> -->
+  <div class="flex flex-row justify-around">
+    <button
+      (click)="increment()"
+      class="px-4 py-2 border rounded bg-sky-800 text-sky-50"
+    >
+      Increase
+    </button>
+    <button
+      (click)="decrement()"
+      class="px-4 py-2 border rounded bg-sky-800 text-sky-50"
+    >
+      Decrease
+    </button>
+  </div>
+</div>

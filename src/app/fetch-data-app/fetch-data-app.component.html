@@ -1,0 +1,7 @@
+<div class="flex flex-col gap-2">
+  <ng-container *ngIf="posts$ | async as posts">
+    <span class="border-b py-2" *ngFor="let post of posts">
+      {{ post.title }}
+    </span>
+  </ng-container>
+</div>

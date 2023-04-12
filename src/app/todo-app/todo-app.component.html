@@ -1,0 +1,32 @@
+<div class="flex flex-col gap-6 justify-stretch items-start">
+  <div class="flex flex-row gap-4">
+    <input
+      class="px-4 py-2 border rounded bg-slate-800 text-slate-50"
+      #todoInput
+      type="text"
+      placeholder="Add a todo"
+    />
+    <button
+      (click)="state.addTodo(todoInput.value); todoInput.value = ''"
+      class="px-4 py-2 border rounded bg-slate-800 text-slate-50"
+    >
+      Add
+    </button>
+  </div>
+  <ul class="flex flex-col justify-start items-start">
+    <li
+      (click)="state.toggleTodo(todo.id)"
+      class="flex flex-row gap-4"
+      *ngFor="let todo of state.todos"
+    >
+      <input type="checkbox" [checked]="todo.completed" />
+      <span [textContent]="todo.title"></span>
+      <button
+        (click)="state.removeTodo(todo.id)"
+        class="px-2 py-1 bg-red-800 bg-red-50"
+      >
+        Remove
+      </button>
+    </li>
+  </ul>
+</div>
